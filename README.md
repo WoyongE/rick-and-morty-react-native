@@ -12,13 +12,13 @@ Then
 cd rick-and-morty-react-native && npm install
 ```
 
-To start on iOS, run
+### Running the application on iOS
 
 ```
-npm run ios
+cd ios && pod install && cd .. && npm run ios
 ```
 
-To start on Android , run
+### Running the application on Android
 
 ```
 npm run android
