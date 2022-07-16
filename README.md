@@ -18,7 +18,7 @@ To start on iOS, run
 npm run ios
 ```
 
-To start Android , run
+To start on Android , run
 
 ```
 npm run android
