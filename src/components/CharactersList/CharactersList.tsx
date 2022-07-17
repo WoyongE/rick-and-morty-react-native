@@ -1,5 +1,5 @@
 import React, { FC, useCallback } from 'react';
-import { FlatList, FlatListProps, KeyboardAvoidingView, ListRenderItemInfo, Platform, StyleSheet, View } from 'react-native';
+import { FlatList, FlatListProps, KeyboardAvoidingView, ListRenderItemInfo, Platform, StyleSheet } from 'react-native';
 import appStore from '../../store/store';
 import { view } from '@risingstack/react-easy-state';
 import { Character, CharactersLayout } from '../../types';
