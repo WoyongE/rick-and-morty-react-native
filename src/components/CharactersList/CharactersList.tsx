@@ -1,5 +1,5 @@
 import React, { FC, useCallback } from 'react';
-import { FlatList, FlatListProps, ListRenderItemInfo, StyleSheet, View } from 'react-native';
+import { FlatList, FlatListProps, KeyboardAvoidingView, ListRenderItemInfo, Platform, StyleSheet, View } from 'react-native';
 import appStore from '../../store/store';
 import { view } from '@risingstack/react-easy-state';
 import { Character, CharactersLayout } from '../../types';
@@ -37,21 +37,27 @@ const CharactersList: FC<Props> = ({ characters, ...props }) => {
 
   return (
     <SafeAreaView edges={['right', 'top', 'left']}>
-      <FlatList
-        {...props}
-        data={characters}
-        removeClippedSubviews
-        numColumns={numColumns}
-        renderItem={renderItem}
-        style={styles.container}
-        onEndReachedThreshold={0.7}
-        keyExtractor={keyExtractor}
-        getItemLayout={getItemLayout}
-        key={appStore.charactersLayout}
-        ItemSeparatorComponent={CharactersListSeparator}
-        contentInsetAdjustmentBehavior="automatic"
-        contentContainerStyle={[styles.contentContainerStyle, { backgroundColor }]}
-      />
+      <KeyboardAvoidingView
+        behavior={Platform.select({
+          ios: 'padding',
+          android: undefined,
+        })}>
+        <FlatList
+          {...props}
+          data={characters}
+          removeClippedSubviews
+          numColumns={numColumns}
+          renderItem={renderItem}
+          style={styles.container}
+          onEndReachedThreshold={0.7}
+          keyExtractor={keyExtractor}
+          getItemLayout={getItemLayout}
+          key={appStore.charactersLayout}
+          ItemSeparatorComponent={CharactersListSeparator}
+          contentInsetAdjustmentBehavior="automatic"
+          contentContainerStyle={[styles.contentContainerStyle, { backgroundColor }]}
+        />
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
