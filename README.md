@@ -12,6 +12,14 @@ Then
 cd rick-and-morty-react-native && npm install
 ```
 
+NOTE: if `npm install` keeps failing, try
+
+```
+npm install --legacy-peer-deps
+```
+
+----
+
 ### Running the application on iOS
 
 ```
