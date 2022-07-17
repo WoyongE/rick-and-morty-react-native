@@ -1,6 +1,6 @@
 # Running the application
 
-Clone the repository using
+Clone the repository (recommend Desktop folder)
 
 ```
 git clone https://github.com/WoyongE/rick-and-morty-react-native.git
