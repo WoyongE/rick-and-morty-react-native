@@ -9,13 +9,7 @@ git clone https://github.com/WoyongE/rick-and-morty-react-native.git
 Then
 
 ```
-cd rick-and-morty-react-native && npm install
-```
-
-NOTE: if `npm install` keeps failing, try
-
-```
-npm install --legacy-peer-deps
+cd rick-and-morty-react-native && npm install --legacy-peer-deps
 ```
 
 ----
